@@ -2,6 +2,27 @@ import React,{Component} from 'react';
 import { Button, Input, Checkbox } from 'antd';
 
 class Login extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      username: '',
+      password : '',
+
+    }
+
+  }
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+
+onSubmit = async () => {
+  const response = await this.props.mutate({
+    variables: this.state,
+  });
+  console.log(response);
+}
     render() {
       return (
         
@@ -10,8 +31,8 @@ class Login extends React.Component {
           <Input
             name='username'
             placeholder='Username'
-            // onChange={e => this.onChange(e)}
-            value={1} />
+            onChange={e => this.onChange(e)}
+            value={this.state.username} />
             
            
             <div> Password </div>
@@ -19,8 +40,8 @@ class Login extends React.Component {
             name='password'
             placeholder='Password'
             type='password'
-            // onChange={e => this.onChange(e)}
-            value={1} />
+            onChange={e => this.onChange(e)}
+            value={this.state.password} />
 
          <Button onClick={console.log('submit this ')}>Login</Button>
          </div>

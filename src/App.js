@@ -15,7 +15,9 @@ class App extends Component {
   }
   ShowRegister() {
     this.setState({
+      showlogin:false,
       showsignup: !this.state.showsignup
+
     });
    
 
@@ -23,7 +25,7 @@ class App extends Component {
   ShowLogin() {
     console.log('yaha aaya ')
     this.setState({
-
+      showsignup:false,
       showlogin: !this.state.showlogin
     });
 
