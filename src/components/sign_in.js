@@ -1,11 +1,11 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import { Button, Input, Checkbox } from 'antd';
 
-class Login extends React.Component {
-    render() {
-      return (
-        
-          <div>
+class SignIn extends Component {
+    state = {  }
+    render() { 
+        return ( 
+            <div>
             <div> username </div>
           <Input
             name='username'
@@ -24,10 +24,8 @@ class Login extends React.Component {
 
          <Button onClick={console.log('submit this ')}>Login</Button>
          </div>
-      
-        
-      );
+         );
     }
-  }
-
-  export default Login;
+}
+ 
+export default SignIn;
