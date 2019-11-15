@@ -14,13 +14,16 @@ class Header extends Component {
       }
     SignUpState() {
         this.setState({
+          showsign_in: false,
+
           showsign_up: !this.state.showsign_up
         });
     }
     SignInState() {
         console.log('yaha aaya ')
         this.setState({
-    
+          showsign_up: false,
+
           showsign_in: !this.state.showsign_in
         });
     
