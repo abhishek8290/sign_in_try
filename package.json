@@ -4,10 +4,19 @@
   "private": true,
   "dependencies": {
     "antd": "^3.25.1",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
+<<<<<<< HEAD
     "mdbootstrap": "^4.9.0",
     "mdbreact": "^4.22.1",
     "react": "^16.8.2",
+=======
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.11",
+    "nodemon": "^1.19.4",
+    "react": "^16.11.0",
+>>>>>>> fde372021614610783cc7f71a92d558b933e1d81
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.11.0",
     "react-responsive-modal": "^4.0.1",
