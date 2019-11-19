@@ -1,49 +1,63 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import SignIn from "./sign_in";
 import SignUp from "./sign_up";
-
+import "../styles/common.css";
+import Modal from "react-responsive-modal";
+import { Button } from "antd";
 
 class Header extends Component {
-    constructor() {
-        super();
-        this.state = {
-          showsign_in: false,
-          showsign_up: false
-        };
-       
-      }
-    SignUpState() {
-        this.setState({
-          showsign_in: false,
+  constructor() {
+    super();
+    this.state = {
+      signin_open: false,
+      signup_open: false
+    };
+  }
+  Signin_OpenModal = () => {
+    this.setState({ signin_open: true });
+  };
 
-          showsign_up: !this.state.showsign_up
-        });
-    }
-    SignInState() {
-        console.log('yaha aaya ')
-        this.setState({
-          showsign_up: false,
+  Signup_OpenModal = () => {
+    this.setState({ signup_open: true });
+  };
 
-          showsign_in: !this.state.showsign_in
-        });
-    
-      }
-    render() { 
-        return ( 
-            <div className="d-flex ">
-            <div className="mr-auto">
-                 <h1>Hi Shristy. Welcome and comfort yourself here.</h1>
-            </div>
-            <div className="mt-3">
-                <button className="mr-4" onClick={this.SignInState.bind(this)}>SIGN IN</button>
-                <button className="mr-4" onClick={this.SignUpState.bind(this)}>SIGN UP</button>
-                <p>Random Statement to write </p>
-                    {this.state.showsign_in ? <SignIn/> : null}
-                    {this.state.showsign_up ? <SignUp/>: null}     
-            </div>
-            </div>
-         );
-    }
+  onCloseModal = () => {
+    this.setState({ signin_open: false, signup_open: false });
+  };
+
+  render() {
+    const { signin_open } = this.state;
+    const { signup_open } = this.state;
+
+    return (
+      <div className="head-bgcolor d-flex justify-content-between">
+      <div className="d-flex align-items-start">
+        <span>
+        <h2>Welcome Shribhi and Abhishri! </h2>
+        <h2> Comfort yourself here.</h2>
+        </span>
+      </div>
+
+      <div className="mb-4 d-flex align-items-end">
+        <div className="mr-3">
+          <Button onClick={this.Signin_OpenModal}>Sign In</Button>
+
+          <Modal open={signin_open} onClose={this.onCloseModal}>
+            <SignIn />
+          </Modal>
+        </div>
+
+        <div>
+          <Button onClick={this.Signup_OpenModal}>Sign Up</Button>
+
+          <Modal open={signup_open} onClose={this.onCloseModal}>
+            <SignUp />
+          </Modal>
+        </div>
+      </div>
+    </div>
+    );
+  }
 }
- 
 export default Header;
+

@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import Header from "./header";
+import "../styles/common.css";
 
 class Body extends Component {
     state = {  }
 
     render() { 
         return (
-           <div>
-                <Header/>
-                    <div>Hello, Body!
-                        Wassup!!....
-                    </div>
-                <Header/>
+           <div className="body-bgcolor">
+
+            Hello, Body!
+            Wassup!!.
+              
             </div>
           );
     }
@@ -19,3 +18,6 @@ class Body extends Component {
  
 export default Body
 ;
+
+
+

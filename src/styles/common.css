@@ -1,0 +1,11 @@
+.head-bgcolor{
+    background-color: rgba(53, 5, 5, 0.849);
+    color: white;
+}
+.body-bgcolor{
+    background-color: rgb(178, 221, 135);
+    padding: 250px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
